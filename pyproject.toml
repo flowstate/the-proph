@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "prophet-service"
+version = "0.1.0"
+description = "Time series forecasting service using Prophet"
+requires-python = ">=3.9"
+dependencies = [
+    "prophet>=1.1.2",
+    "flask>=2.2.3",
+    "flask-cors>=3.0.10",
+    "pandas>=1.5.3",
+    "numpy>=1.23.5",
+    "matplotlib>=3.7.1",
+]
+
+[tool.ruff]
+# Enable flake8-bugbear (`B`) rules.
+select = ["E", "F", "B", "I"]
+ignore = ["E501"]  # Line length
+
+# Same as Black.
+line-length = 88
+indent-width = 4
+
+# Assume Python 3.9
+target-version = "py39"
+
+[tool.ruff.format]
+# Use double quotes for strings.
+quote-style = "double"
+
+# Indent with spaces, not tabs.
+indent-style = "space"
+
+# Respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Automatically detect the appropriate line ending.
+line-ending = "auto"
+
+[tool.ruff.lint]
+extend-select = ["E", "F", "B", "I"]
+ignore = ["E501"]  # Line length
